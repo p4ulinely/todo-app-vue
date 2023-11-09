@@ -1,16 +1,14 @@
 <template>
   <div>
-   <p>To-Do APP</p> 
-   <hr>
-   <div class="tasks">
-    <span v-show="loading">loading...</span>
-    <div v-for="(task, idx) in tasks" v-bind:key="idx">
-      <TaskComponent 
-        v-bind:task="task"
-        v-on:delete-task="deleteTask"
-        v-on:toggle-reminder="toggleReminder" />
+    <div class="tasks">
+      <span v-show="loading">loading...</span>
+        <TaskComponent
+          v-for="(task, idx) in tasks" v-bind:key="idx"
+          v-bind:task="task"
+          v-on:delete-task="deleteTask"
+          v-on:toggle-reminder="toggleReminder"
+        />
     </div>
-   </div>
   </div>
 </template>
 
@@ -18,9 +16,9 @@
 import TaskComponent from './TaskComponent.vue';
 
 export default {
-  name: 'MainComponent',
+  name: 'TasksComponent',
   components: {
-    TaskComponent,
+    TaskComponent
   },
   data() {
     return {
@@ -62,7 +60,7 @@ export default {
         },
       ];
       this.loading = false;
-    }, 1000);
+    }, 500);
   } 
 }
 </script>
