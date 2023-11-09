@@ -1,27 +1,21 @@
 import { createStore } from 'vuex'
 
+import userModule from './modules/userModule.js';
+
 export default createStore({
   state: {
-    user: {
-      id: 'abc-1',
-      name: 'pauly m',
-      email: 'paulinelym@gmail.com',
-      avatar: ''
-    },
-    sessionAuth: false
+    appInfo: {
+      version: '1.0'
+    }
   },
   getters: {
   },
   mutations: {
-    setUser(state, data) {
-      state.user = data;
-    },
-    setSessionAuth(state, data) {
-      state.sessionAuth = data;
-    }
   },
   actions: {
   },
   modules: {
+    userModule,
+
   }
 })

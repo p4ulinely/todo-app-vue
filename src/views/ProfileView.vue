@@ -3,7 +3,7 @@
   <h2>Profile</h2>
   <div v-if="!obtemUsuarioLoggado.id">not logged...</div>
   <div v-else-if="obtemIdProfileRota() !== obtemUsuarioLoggado.id">invalid profile...</div>
-  <div v-else>{{obtemUsuarioLoggado.id}} | {{obtemUsuarioLoggado.name}} | {{obtemUsuarioLoggado.email}}</div>
+  <div v-else>{{obtemUsuarioLoggado.id}} | {{obtemUsuarioLoggado.name}} | {{obtemUsuarioLoggado.email}} | tasks: {{$store.getters.tasksLength}}</div>
   <p>{{obtemUsuarioLoggado}}</p>
 </div>
 
@@ -21,7 +21,7 @@ export default {
   },
   computed: {
     obtemUsuarioLoggado() {
-      return this.$store.state.user;
+      return this.$store.state.userModule.user;
     }
   },
   methods: {

@@ -18,7 +18,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  const currentUser = store.state.user;
+  const currentUser = store.state.userModule.user;
 
   if (to.meta.requiresAuth && !currentUser.id) {
     console.log('1')

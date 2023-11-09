@@ -26,6 +26,16 @@ export default {
       loading: true
     }
   },
+  computed: {
+    // getMyTasks() {
+    //   return this.$store.state.userModule.tasks;
+    // }
+  },
+  watch: {
+    tasks() {
+      this.$store.commit('setTasks', this.tasks);
+    },
+  },
   methods: {
     deleteTask(id) {
       this.tasks = this.tasks.filter(t => t.id !== id);
@@ -36,29 +46,7 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-      this.tasks = [
-        {
-          id: 1,
-          title: 'title1',
-          date: new Date(Date.now()),
-          msg: 'msg 111111111....',
-          reminder: true
-        },
-        {
-          id: 2,
-          title: 'title2',
-          date: new Date(Date.now()),
-          msg: 'msg 111111111....',
-          reminder: false
-        },
-        {
-          id: 3,
-          title: 'title3',
-          date: new Date(Date.now()),
-          msg: 'msg 111111111....',
-          reminder: true
-        },
-      ];
+      this.tasks = this.$store.state.userModule.tasks;
       this.loading = false;
     }, 500);
   } 

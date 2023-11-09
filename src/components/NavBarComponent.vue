@@ -15,13 +15,12 @@ export default {
   name: 'NavbarComponent',
   data() {
     return {
-      // usuarioLoggado: this.$store.state.user,
 
     }
   },
   computed: {
     obtemUsuarioLoggado() {
-      return this.$store.state.user;
+      return this.$store.state.userModule.user;
     }
   }, 
   methods: {
