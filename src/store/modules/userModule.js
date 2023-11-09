@@ -32,6 +32,7 @@ const userModule = {
   },
   getters: {
     tasksLength: state => state.tasks.length,
+    userId: state => state.user.id,
   },
   mutations: {
     setUser(state, data) {

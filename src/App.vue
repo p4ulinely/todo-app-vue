@@ -1,19 +1,23 @@
 <template>
 <div>
-  <p>To-Do APP</p>
+  <p>To-Do APP <span class="pi pi-bookmark-fill"></span></p>
   <NavbarComponent />
-  <hr>
+  <Divider />
   <router-view />
+  <Divider />
+  <p>Version: {{$store.state.appInfo.version}}</p>
 </div>
 </template>
 
 <script>
 import NavbarComponent from './components/NavbarComponent.vue';
+import Divider from 'primevue/divider';
 
 export default {
   name: 'App',
   components: {
-    NavbarComponent
+    NavbarComponent,
+    Divider
   }
 }
 </script>

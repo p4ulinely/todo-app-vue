@@ -1,10 +1,9 @@
 <template>
 <div>
-  <h2>Profile</h2>
+  <h2>Profile <span class="pi pi-user"></span></h2>
   <div v-if="!obtemUsuarioLoggado.id">not logged...</div>
   <div v-else-if="obtemIdProfileRota() !== obtemUsuarioLoggado.id">invalid profile...</div>
-  <div v-else>{{obtemUsuarioLoggado.id}} | {{obtemUsuarioLoggado.name}} | {{obtemUsuarioLoggado.email}} | tasks: {{$store.getters.tasksLength}}</div>
-  <p>{{obtemUsuarioLoggado}}</p>
+  <div v-else> {{obtemUsuarioLoggado.id}} | {{obtemUsuarioLoggado.name}} | {{obtemUsuarioLoggado.email}} | tasks: {{$store.getters.tasksLength}}</div>
 </div>
 
 </template>

@@ -6,6 +6,10 @@ export default createStore({
   state: {
     appInfo: {
       version: '1.0'
+    },
+    sesssionInfo: {
+      id: '',
+      
     }
   },
   getters: {

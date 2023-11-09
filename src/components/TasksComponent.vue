@@ -1,7 +1,8 @@
 <template>
   <div>
+    <h2>Tasks <span class="pi pi-tablet"></span></h2>
     <div class="tasks">
-      <span v-show="loading">loading...</span>
+      <span v-show="loading"><i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i></span>
         <TaskComponent
           v-for="(task, idx) in tasks" v-bind:key="idx"
           v-bind:task="task"

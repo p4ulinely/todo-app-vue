@@ -1,10 +1,10 @@
 <template>
 <div>
   <router-link to="/">home</router-link>
-  <router-link :to="obtemUsuarioLoggado.id ? '/profile/' + obtemUsuarioLoggado.id : '#'">profile</router-link>
+  <router-link :to="obtemUsuarioLoggado.id ? '/profile/' + obtemUsuarioLoggado.id : ''">profile</router-link>
   <router-link to="/tasks">tasks</router-link>
-  <a v-show="obtemUsuarioLoggado.id" @click="limparUsuario()">sair</a>
-  <!-- <a v-show="!obtemUsuarioLoggado.id" href="/login">login</a> -->
+  | <a v-if="obtemUsuarioLoggado.id" @click="limparUsuario()">sair</a>
+  <a v-else href="/login">login</a>
 </div>
 
 </template>
@@ -26,7 +26,7 @@ export default {
   methods: {
     limparUsuario() {
       this.$store.commit('setUser', {});
-      this.$router.push('/login');
+      this.$router.push('/');
     }
   } 
 }
