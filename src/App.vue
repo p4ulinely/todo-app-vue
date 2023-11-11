@@ -5,7 +5,7 @@
   <Divider />
   <router-view />
   <Divider />
-  <p>Version: {{$store.state.appInfo.version}}</p>
+  <p>Version: {{$store.state.appInfo.version}}<span v-show="$store.getters.logged"></span></p>
 </div>
 </template>
 
@@ -18,15 +18,16 @@ export default {
   components: {
     NavbarComponent,
     Divider
-  }
+  },
+  beforeCreate() {
+		this.$store.commit('INITIALISE_STORE');
+	}
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;

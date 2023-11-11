@@ -5,11 +5,9 @@
   <div v-else-if="obtemIdProfileRota() !== obtemUsuarioLoggado.id">invalid profile...</div>
   <div v-else> {{obtemUsuarioLoggado.id}} | {{obtemUsuarioLoggado.name}} | {{obtemUsuarioLoggado.email}} | tasks: {{$store.getters.tasksLength}}</div>
 </div>
-
 </template>
 
 <script>
-
 
 export default {
   name: 'ProfileView',

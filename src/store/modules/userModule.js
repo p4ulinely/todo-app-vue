@@ -1,46 +1,25 @@
 const userModule = {
   state: {
     user: {
-      id: 'abc-1',
-      name: 'pauly m',
-      email: 'paulinelym@gmail.com',
-      avatar: ''
     },
     tasks: [
-      {
-        id: 1,
-        title: 'title1',
-        date: new Date(Date.now()),
-        msg: 'msg 111111111....',
-        reminder: true
-      },
-      {
-        id: 2,
-        title: 'title2',
-        date: new Date(Date.now()),
-        msg: 'msg 111111111....',
-        reminder: false
-      },
-      {
-        id: 3,
-        title: 'title3',
-        date: new Date(Date.now()),
-        msg: 'msg 111111111....',
-        reminder: true
-      },
     ],
   },
   getters: {
     tasksLength: state => state.tasks.length,
+    logged: state => state.user.id !== '',
     userId: state => state.user.id,
   },
   mutations: {
-    setUser(state, data) {
+    SET_USER(state, data) {
+      console.log('user has changed...');
       state.user = data;
     },
-    setTasks(state, data) {
+    SET_TASKS(state, data) {
+      console.log('tasks have changed...');
       state.tasks = data;
     },
+    
   },
   actions: {
   }

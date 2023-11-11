@@ -32,9 +32,9 @@ export default {
     //   return this.$store.state.userModule.tasks;
     // }
   },
-  watch: {
+  watch: { // maybe do this when leaving the component, to save resources
     tasks() {
-      this.$store.commit('setTasks', this.tasks);
+      this.$store.commit('SET_TASKS', this.tasks);
     },
   },
   methods: {

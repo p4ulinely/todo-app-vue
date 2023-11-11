@@ -32,12 +32,11 @@
 
         httpInstance.get('getUser')
           .then(async response => {
-            this.$store.commit('setUser', response.data[0]);
+            this.$store.commit('SET_USER', response.data[0]);
             
             var tasksResponse = await httpInstance.get('getTasks');
-            // console.log(tasksResponse.data)
-            this.$store.commit('setTasks', tasksResponse.data);
 
+            this.$store.commit('SET_TASKS', tasksResponse.data);
             this.$router.push('/');
           })
           .catch(err => {
@@ -45,6 +44,7 @@
           })
           .finally(() => {
             this.gettingLogin = false;
+            // this.$store.subscribe((mutation, state) => localStorage.setItem('store-userModule', JSON.stringify(state)));
           })
       },
       cadastrar() {
